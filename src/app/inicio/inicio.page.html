@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+    <ion-buttons slot="end">
+      <!-- Botón para cerrar sesión -->
+      <ion-button (click)="logout()" color="danger">Cerrar Sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Contenedor de bienvenida con imagen y correo -->
+  <div class="welcome-container" *ngIf="userEmail && userProfileImageUrl; else loading">
+    <!-- Mostrar la imagen de perfil -->
+    <div class="profile-image-container">
+      <img [src]="userProfileImageUrl" alt="Imagen de perfil" class="profile-image">
+    </div>
+
+    <!-- Mostrar mensaje de bienvenida con el correo del usuario -->
+    <h2>Bienvenido, {{ userEmail }}</h2>
+
+    <!-- Botones de acciones -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" color="primary" (click)="entradaSede()">Entrada Sede</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" color="secondary" (click)="salidaSede()">Salida Sede</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" color="primary" (click)="entradaClases()">Entrada Clases</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" color="secondary" (click)="salidaClases()">Salida Clases</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!-- Mensaje de carga mientras se obtienen los datos -->
+  <ng-template #loading>
+    <ion-spinner></ion-spinner>
+    <p>Cargando...</p>
+  </ng-template>
+</ion-content>

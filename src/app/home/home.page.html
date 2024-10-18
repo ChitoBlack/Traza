@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2>¡Bienvenido a nuestra App!</h2>
+        <p>Por favor, selecciona una opción para continuar:</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <!-- Botón de Login -->
+        <ion-button expand="full" color="primary" (click)="navigateToLogin()">
+          Iniciar Sesión
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <!-- Botón de Registro -->
+        <ion-button expand="full" color="secondary" (click)="navigateToRegister()">
+          Registrarse
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
